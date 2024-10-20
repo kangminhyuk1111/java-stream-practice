@@ -2,6 +2,8 @@ package problem.medium;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Stream;
 
 public class Problem41 {
 
@@ -14,6 +16,9 @@ public class Problem41 {
      */
     public static SimpleEntry<Long, Double> countAndAverageLengthOfStringsStartingWithC(List<String> strings) {
         // 여기에 코드 작성
-        return null;
+        long count = strings.stream().filter(string -> string.startsWith("c")).count();
+        double average = strings.stream().mapToDouble(String::length).average().orElse(0.0);
+
+        return new SimpleEntry<>(count, average);
     }
 }

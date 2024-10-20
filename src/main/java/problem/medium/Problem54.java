@@ -1,5 +1,6 @@
 package problem.medium;
 
+import java.util.Comparator;
 import java.util.List;
 import problem.medium.resources.Product;
 
@@ -14,6 +15,6 @@ public class Problem54 {
      */
     public static String getMostExpensiveProductName(List<Product> products) {
         // 여기에 코드 작성
-        return "";
+        return products.stream().max(Comparator.comparing(Product::getPrice)).map(Product::getName).orElse("");
     }
 }

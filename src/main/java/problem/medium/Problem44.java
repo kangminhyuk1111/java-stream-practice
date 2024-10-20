@@ -12,6 +12,6 @@ public class Problem44 {
      */
     public static int sumExcludingRange(List<Integer> numbers) {
         // 여기에 코드 작성
-        return 0;
+        return numbers.stream().filter(number -> !(number >= 5 && number <= 10)).mapToInt(Integer::intValue).sum();
     }
 }

@@ -2,6 +2,7 @@ package problem.medium;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Problem46 {
 
@@ -13,6 +14,7 @@ public class Problem46 {
      */
     public static Map<Integer, Long> frequencyOfNumbers(List<Integer> numbers) {
         // 여기에 코드 작성
-        return null;
+        return numbers.stream()
+                .collect(Collectors.groupingBy(num -> num, Collectors.counting()));
     }
 }

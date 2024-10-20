@@ -14,7 +14,7 @@ public class Problem55Test {
     public void testGetCustomerWhoOrderedMostBread() {
         List<Customer2> customers = Arrays.asList(
                 new Customer2("Alice", Arrays.asList(new Order("Bread", 5), new Order("Milk", 2))),
-                new Customer2("Bob", Arrays.asList(new Order("Bread", 7)))
+                new Customer2("Bob", List.of(new Order("Bread", 7)))
         );
         assertEquals("Bob", Problem55.getCustomerWhoOrderedMostBread(customers));
     }

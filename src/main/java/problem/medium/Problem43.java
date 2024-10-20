@@ -14,6 +14,9 @@ public class Problem43 {
      */
     public static List<String> filterStringsByLength(List<String> strings, List<Integer> lengths) {
         // 여기에 코드 작성
-        return null;
+        return strings.stream()
+                .filter(string -> lengths.stream()
+                        .anyMatch(length -> string.length() <= length))
+                .toList();
     }
 }

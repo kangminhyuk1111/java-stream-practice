@@ -1,5 +1,6 @@
 package problem.medium;
 
+import java.util.Comparator;
 import java.util.List;
 import problem.medium.resources.Employee;
 
@@ -14,6 +15,6 @@ public class Problem58 {
      */
     public static String getOldestEmployeeName(List<Employee> employees) {
         // 여기에 코드 작성
-        return "";
+        return employees.stream().max(Comparator.comparing(Employee::getAge)).get().getName();
     }
 }

@@ -13,6 +13,6 @@ public class Problem57 {
      */
     public static List<Order> findOrdersWithCoffee(List<Order> orders) {
         // 여기에 코드 작성
-        return null;
+        return orders.stream().filter(order -> order.getProduct().equals("Coffee")).toList();
     }
 }

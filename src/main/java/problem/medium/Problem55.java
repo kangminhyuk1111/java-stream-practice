@@ -1,7 +1,9 @@
 package problem.medium;
 
+import java.util.Comparator;
 import java.util.List;
 import problem.medium.resources.Customer2;
+import problem.medium.resources.Order;
 
 public class Problem55 {
 
@@ -14,6 +16,11 @@ public class Problem55 {
      */
     public static String getCustomerWhoOrderedMostBread(List<Customer2> customers) {
         // 여기에 코드 작성
-        return "";
+        return customers.stream()
+                .max(Comparator.comparing(customer -> customer.getOrders().stream()
+                        .filter(order -> order.getProduct().equals("Bread"))
+                        .mapToInt(Order::getQuantity).sum())
+                ).map(Customer2::getName)
+                .orElse("");
     }
 }
